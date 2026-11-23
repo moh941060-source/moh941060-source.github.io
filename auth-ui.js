@@ -156,6 +156,7 @@
       const details = document.createElement("details");
       details.dataset.authNavigation = "";
       details.className = isDialogMenu ? "menu-section auth-nav-section" : "auth-nav-section auth-nav-product";
+      details.open = isDialogMenu && !isAuthenticatedUser(user);
 
       const summary = document.createElement("summary");
       const title = document.createElement("span");
