@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="إدارة ملفك الشخصي وطلباتك وخدماتك وطلبات الدعم في SUQIA.">
+    <title>حسابي | SUQIA</title>
+    <link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header product-header">
+      <a class="site-name" href="index-ar.html" aria-label="SUQIA - الرئيسية">SUQIA</a>
+      <nav class="product-header-links" aria-label="التنقل الرئيسي">
+        <a href="index-ar.html">الرئيسية</a>
+        <a href="product-ar.html">الجهاز</a>
+        <a href="about-ar.html">عن SUQIA</a>
+      </nav>
+      <a class="product-language-link" href="account.html" lang="en" hreflang="en">English</a>
+    </header>
+
+    <main class="account-main">
+      <section class="account-heading" aria-labelledby="account-title">
+        <p class="section-eyebrow">حساب SUQIA</p>
+        <h1 class="product-title" id="account-title">حسابي</h1>
+        <p class="product-lead">ملفك الشخصي وطلباتك وخدماتك والدعم.</p>
+      </section>
+
+      <section class="account-unavailable" data-account-unavailable aria-labelledby="account-unavailable-title">
+        <h2 class="section-title" id="account-unavailable-title">الحسابات غير متاحة بعد</h2>
+        <p data-account-unavailable-message>النظام الخلفي الآمن للحسابات غير متصل. لا تُخزن هذه الصفحة بيانات الملف الشخصي أو الطلبات.</p>
+        <a class="action-button action-button-primary" href="auth-ar.html?mode=login">الانتقال إلى تسجيل الدخول</a>
+      </section>
+      <p class="account-page-message" data-account-message role="status" aria-live="polite" hidden></p>
+
+      <div class="account-content" data-account-content hidden>
+        <nav class="account-tabs" aria-label="أقسام الحساب">
+          <a href="#overview">نظرة عامة</a>
+          <a href="#profile">ملفي الشخصي</a>
+          <a href="#orders">طلباتي</a>
+          <a href="#services">خدماتي</a>
+          <a href="#devices">أجهزتي</a>
+          <a href="#monitoring">مراقبة المياه</a>
+          <a href="#control">التحكم في الجهاز</a>
+          <a href="#support">الدعم</a>
+        </nav>
+
+        <section class="account-section" id="overview" aria-labelledby="overview-title">
+          <p class="section-eyebrow">نظرة عامة</p>
+          <h2 class="section-title" id="overview-title">مرحبًا، <span data-account-name></span></h2>
+          <p data-account-email></p>
+          <div class="account-overview-grid">
+            <a class="account-summary-card" href="#orders"><strong>طلباتي</strong><span>راجع سجل الطلبات وحالتها.</span></a>
+            <a class="account-summary-card" href="#services"><strong>خدماتي</strong><span>اعرض الخدمات المرتبطة بحسابك.</span></a>
+            <a class="account-summary-card" href="#support"><strong>الدعم</strong><span>راجع طلبات الدعم الخاصة بك.</span></a>
+          </div>
+        </section>
+
+        <section class="account-section" id="profile" aria-labelledby="profile-title">
+          <p class="section-eyebrow">المعلومات الشخصية</p>
+          <h2 class="section-title" id="profile-title">ملفي الشخصي</h2>
+          <form class="auth-form" data-profile-form>
+            <label class="form-field">الاسم بالكامل
+              <input name="name" autocomplete="name" required>
+            </label>
+            <label class="form-field">البريد الإلكتروني
+              <input name="email" type="email" autocomplete="email" readonly>
+            </label>
+            <label class="form-field">رقم الهاتف
+              <input name="phone" type="tel" autocomplete="tel">
+            </label>
+            <label class="form-field">المدينة / المحافظة
+              <input name="city" autocomplete="address-level2">
+            </label>
+            <p class="auth-form-error" data-profile-error role="alert" hidden></p>
+            <p class="auth-message" data-profile-success role="status" aria-live="polite" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">حفظ الملف الشخصي</button>
+          </form>
+        </section>
+
+        <section class="account-section" id="orders" aria-labelledby="orders-title">
+          <p class="section-eyebrow">سجل الطلبات</p>
+          <h2 class="section-title" id="orders-title">طلباتي</h2>
+          <p class="account-empty-state" data-orders-empty hidden>لا توجد طلبات مرتبطة بهذا الحساب حتى الآن.</p>
+          <div class="account-list" data-orders-list></div>
+        </section>
+
+        <section class="account-section" id="services" aria-labelledby="services-title">
+          <p class="section-eyebrow">خدماتك</p>
+          <h2 class="section-title" id="services-title">خدماتي</h2>
+          <p class="account-empty-state" data-services-empty hidden>لا توجد خدمات مرتبطة بهذا الحساب حتى الآن.</p>
+          <div class="account-list" data-services-list></div>
+        </section>
+
+        <section class="account-section account-coming-soon" id="devices" aria-labelledby="devices-title">
+          <p class="section-eyebrow">تكامل الأجهزة</p>
+          <h2 class="section-title" id="devices-title">أجهزتي <span class="feature-status">قريبًا</span></h2>
+          <p>تسجيل الأجهزة والاتصال بها غير متاحين بعد. لا نعرض حالة أو قراءات غير حقيقية.</p>
+        </section>
+
+        <section class="account-section account-coming-soon" id="monitoring" aria-labelledby="monitoring-title">
+          <p class="section-eyebrow">بيانات المياه</p>
+          <h2 class="section-title" id="monitoring-title">مراقبة المياه <span class="feature-status">قريبًا</span></h2>
+          <p>ستظهر قراءات المستشعرات المباشرة بعد جاهزية الأجهزة والنظام الخلفي.</p>
+        </section>
+
+        <section class="account-section account-coming-soon" id="control" aria-labelledby="control-title">
+          <p class="section-eyebrow">أوامر الأجهزة</p>
+          <h2 class="section-title" id="control-title">التحكم بالأجهزة <span class="feature-status">قريبًا</span></h2>
+          <p>أوامر التحكم عن بُعد غير متاحة بعد.</p>
+        </section>
+
+        <section class="account-section" id="support" aria-labelledby="support-title">
+          <p class="section-eyebrow">المساعدة والدعم</p>
+          <h2 class="section-title" id="support-title">الدعم</h2>
+          <p class="account-empty-state" data-support-empty hidden>لا توجد طلبات دعم مرتبطة بهذا الحساب حتى الآن.</p>
+          <div class="account-list" data-support-list></div>
+          <form class="auth-form" data-support-form>
+            <label class="form-field">الموضوع
+              <input name="subject" required>
+            </label>
+            <label class="form-field">كيف يمكننا مساعدتك؟
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <p class="auth-form-error" data-support-error role="alert" hidden></p>
+            <p class="auth-message" data-support-success role="status" aria-live="polite" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">إرسال طلب الدعم</button>
+          </form>
+          <p class="account-direct-support">للاستفسارات العامة، راسلنا عبر <a href="mailto:suqia.ai.official@gmail.com">suqia.ai.official@gmail.com</a>.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer auth-footer">
+      <div class="footer-bottom">
+        <p>© ٢٠٢٦ SUQIA. جميع الحقوق محفوظة.</p>
+        <nav class="footer-language" aria-label="اللغة">
+          <a href="account-ar.html" lang="ar" hreflang="ar" aria-current="page">العربية</a>
+          <span aria-hidden="true">|</span>
+          <a href="account.html" lang="en" hreflang="en">English</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="auth-config.js" defer></script>
+    <script src="auth-client.js" defer></script>
+    <script src="auth-ui.js" defer></script>
+  </body>
+</html>

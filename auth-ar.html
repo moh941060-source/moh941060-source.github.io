@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ادخل إلى حسابك في SUQIA. ستتوفر خدمات الحساب عند ربط النظام الخلفي الآمن.">
+    <title>حساب SUQIA</title>
+    <link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header product-header">
+      <a class="site-name" href="index-ar.html" aria-label="SUQIA - الرئيسية">SUQIA</a>
+      <nav class="product-header-links" aria-label="التنقل الرئيسي">
+        <a href="index-ar.html">الرئيسية</a>
+        <a href="product-ar.html">الجهاز</a>
+        <a href="about-ar.html">عن SUQIA</a>
+      </nav>
+      <a class="product-language-link" href="auth.html?mode=login" lang="en" hreflang="en">English</a>
+    </header>
+
+    <main class="auth-main" data-auth-page>
+      <section class="auth-panel" aria-labelledby="auth-title">
+        <p class="section-eyebrow">حساب SUQIA</p>
+        <h1 class="product-title" id="auth-title">حسابك في SUQIA</h1>
+        <p class="product-lead">سجّل الدخول أو أنشئ حسابًا للوصول إلى خدمات SUQIA.</p>
+        <p class="auth-backend-notice" data-auth-backend-notice role="status" hidden>
+          خدمة الحساب الآمنة غير متصلة بعد. لا يمكن إنشاء حساب أو تسجيل الدخول، ولا ترسل هذه الصفحة بيانات الدخول أو تخزنها.
+        </p>
+        <p class="auth-backend-notice" data-auth-email-notice role="status" hidden>
+          لم يتم إعداد إرسال البريد على هذا الخادم المحلي. التسجيل واستعادة كلمة المرور غير متاحين حاليًا.
+        </p>
+        <p class="auth-message" data-auth-message role="status" aria-live="polite" hidden></p>
+
+        <section class="auth-view" data-auth-view="login" aria-labelledby="login-title">
+          <h2 class="section-title" id="login-title">تسجيل الدخول</h2>
+          <form class="auth-form" data-auth-form="login">
+            <label class="form-field">البريد الإلكتروني
+              <input name="email" type="email" autocomplete="username" required>
+            </label>
+            <label class="form-field">كلمة المرور
+              <input name="password" type="password" autocomplete="current-password" required>
+            </label>
+            <label class="auth-checkbox"><input name="rememberMe" type="checkbox"><span>تذكرني على هذا الجهاز</span></label>
+            <p class="auth-form-error" data-auth-error role="alert" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">تسجيل الدخول</button>
+          </form>
+          <div class="auth-links">
+            <a href="auth-ar.html?mode=forgot-password">نسيت كلمة المرور؟</a>
+            <a href="auth-ar.html?mode=register">إنشاء حساب</a>
+          </div>
+        </section>
+
+        <section class="auth-view" data-auth-view="register" aria-labelledby="register-title" hidden>
+          <h2 class="section-title" id="register-title">إنشاء حساب</h2>
+          <form class="auth-form" data-auth-form="register">
+            <label class="form-field">الاسم بالكامل
+              <input name="name" autocomplete="name" required>
+            </label>
+            <label class="form-field">البريد الإلكتروني
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+            <label class="form-field">كلمة المرور
+              <input name="password" type="password" autocomplete="new-password" minlength="12" required>
+            </label>
+            <label class="form-field">تأكيد كلمة المرور
+              <input name="passwordConfirm" type="password" autocomplete="new-password" minlength="12" required>
+            </label>
+            <p class="auth-form-error" data-auth-error role="alert" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">إنشاء الحساب</button>
+          </form>
+          <div class="auth-links"><a href="auth-ar.html?mode=login">لديك حساب بالفعل؟ سجّل الدخول</a></div>
+        </section>
+
+        <section class="auth-view" data-auth-view="forgot-password" aria-labelledby="forgot-title" hidden>
+          <h2 class="section-title" id="forgot-title">نسيت كلمة المرور</h2>
+          <p>أدخل بريد حسابك. إذا كان الحساب موجودًا، سترسل الخدمة المتصلة تعليمات إعادة التعيين.</p>
+          <form class="auth-form" data-auth-form="forgot-password">
+            <label class="form-field">البريد الإلكتروني
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+            <p class="auth-form-error" data-auth-error role="alert" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">إرسال تعليمات إعادة التعيين</button>
+          </form>
+          <div class="auth-links"><a href="auth-ar.html?mode=login">العودة إلى تسجيل الدخول</a></div>
+        </section>
+
+        <section class="auth-view" data-auth-view="reset-password" aria-labelledby="reset-title" hidden>
+          <h2 class="section-title" id="reset-title">إعادة تعيين كلمة المرور</h2>
+          <p data-reset-token-notice hidden>رابط إعادة التعيين مفقود أو غير صالح. اطلب رسالة إعادة تعيين جديدة.</p>
+          <form class="auth-form" data-auth-form="reset-password">
+            <input name="token" type="hidden">
+            <label class="form-field">كلمة المرور الجديدة
+              <input name="password" type="password" autocomplete="new-password" minlength="12" required>
+            </label>
+            <label class="form-field">تأكيد كلمة المرور الجديدة
+              <input name="passwordConfirm" type="password" autocomplete="new-password" minlength="12" required>
+            </label>
+            <p class="auth-form-error" data-auth-error role="alert" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">إعادة تعيين كلمة المرور</button>
+          </form>
+          <div class="auth-links"><a href="auth-ar.html?mode=forgot-password">طلب رابط جديد</a></div>
+        </section>
+
+        <section class="auth-view" data-auth-view="verify-email" aria-labelledby="verify-title" hidden>
+          <h2 class="section-title" id="verify-title">تأكيد البريد الإلكتروني</h2>
+          <p data-verification-status role="status" aria-live="polite"></p>
+          <div class="auth-links"><a href="auth-ar.html?mode=login">الانتقال إلى تسجيل الدخول</a></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer auth-footer">
+      <div class="footer-bottom">
+        <p>© ٢٠٢٦ SUQIA. جميع الحقوق محفوظة.</p>
+        <nav class="footer-language" aria-label="اللغة">
+          <a href="auth-ar.html?mode=login" lang="ar" hreflang="ar" aria-current="page">العربية</a>
+          <span aria-hidden="true">|</span>
+          <a href="auth.html?mode=login" lang="en" hreflang="en">English</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="auth-config.js" defer></script>
+    <script src="auth-client.js" defer></script>
+    <script src="auth-ui.js" defer></script>
+  </body>
+</html>

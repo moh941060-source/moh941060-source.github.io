@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your SUQIA profile, orders, services, and support.">
+    <title>My Account | SUQIA</title>
+    <link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header product-header">
+      <a class="site-name" href="index.html" aria-label="SUQIA home">SUQIA</a>
+      <nav class="product-header-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="about.html">About</a>
+      </nav>
+      <a class="product-language-link" href="account-ar.html" lang="ar" hreflang="ar">العربية</a>
+    </header>
+
+    <main class="account-main">
+      <section class="account-heading" aria-labelledby="account-title">
+        <p class="section-eyebrow">SUQIA ACCOUNT</p>
+        <h1 class="product-title" id="account-title">My Account</h1>
+        <p class="product-lead">Your profile, orders, services, and support.</p>
+      </section>
+
+      <section class="account-unavailable" data-account-unavailable aria-labelledby="account-unavailable-title">
+        <h2 class="section-title" id="account-unavailable-title">Account access is not available yet</h2>
+        <p data-account-unavailable-message>The secure account backend is not connected. No profile or order data is stored in this website.</p>
+        <a class="action-button action-button-primary" href="auth.html?mode=login">Go to Login</a>
+      </section>
+      <p class="account-page-message" data-account-message role="status" aria-live="polite" hidden></p>
+
+      <div class="account-content" data-account-content hidden>
+        <nav class="account-tabs" aria-label="Account sections">
+          <a href="#overview">Overview</a>
+          <a href="#profile">My Profile</a>
+          <a href="#orders">My Orders</a>
+          <a href="#services">My Services</a>
+          <a href="#devices">My Devices</a>
+          <a href="#monitoring">Water Monitoring</a>
+          <a href="#control">Device Control</a>
+          <a href="#support">Support</a>
+        </nav>
+
+        <section class="account-section" id="overview" aria-labelledby="overview-title">
+          <p class="section-eyebrow">OVERVIEW</p>
+          <h2 class="section-title" id="overview-title">Welcome, <span data-account-name></span></h2>
+          <p data-account-email></p>
+          <div class="account-overview-grid">
+            <a class="account-summary-card" href="#orders"><strong>My Orders</strong><span>Review your order history and status.</span></a>
+            <a class="account-summary-card" href="#services"><strong>My Services</strong><span>View services connected to your account.</span></a>
+            <a class="account-summary-card" href="#support"><strong>Support</strong><span>View your support requests.</span></a>
+          </div>
+        </section>
+
+        <section class="account-section" id="profile" aria-labelledby="profile-title">
+          <p class="section-eyebrow">PERSONAL INFORMATION</p>
+          <h2 class="section-title" id="profile-title">My Profile</h2>
+          <form class="auth-form" data-profile-form>
+            <label class="form-field">Full name
+              <input name="name" autocomplete="name" required>
+            </label>
+            <label class="form-field">Email address
+              <input name="email" type="email" autocomplete="email" readonly>
+            </label>
+            <label class="form-field">Phone number
+              <input name="phone" type="tel" autocomplete="tel">
+            </label>
+            <label class="form-field">City / Governorate
+              <input name="city" autocomplete="address-level2">
+            </label>
+            <p class="auth-form-error" data-profile-error role="alert" hidden></p>
+            <p class="auth-message" data-profile-success role="status" aria-live="polite" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">Save profile</button>
+          </form>
+        </section>
+
+        <section class="account-section" id="orders" aria-labelledby="orders-title">
+          <p class="section-eyebrow">ORDER HISTORY</p>
+          <h2 class="section-title" id="orders-title">My Orders</h2>
+          <p class="account-empty-state" data-orders-empty hidden>No orders are associated with this account yet.</p>
+          <div class="account-list" data-orders-list></div>
+        </section>
+
+        <section class="account-section" id="services" aria-labelledby="services-title">
+          <p class="section-eyebrow">YOUR SERVICES</p>
+          <h2 class="section-title" id="services-title">My Services</h2>
+          <p class="account-empty-state" data-services-empty hidden>No services are associated with this account yet.</p>
+          <div class="account-list" data-services-list></div>
+        </section>
+
+        <section class="account-section account-coming-soon" id="devices" aria-labelledby="devices-title">
+          <p class="section-eyebrow">HARDWARE INTEGRATION</p>
+          <h2 class="section-title" id="devices-title">My Devices <span class="feature-status">Coming Soon</span></h2>
+          <p>Device registration and connection are not available yet. No device status or readings are shown.</p>
+        </section>
+
+        <section class="account-section account-coming-soon" id="monitoring" aria-labelledby="monitoring-title">
+          <p class="section-eyebrow">WATER DATA</p>
+          <h2 class="section-title" id="monitoring-title">Water Monitoring <span class="feature-status">Coming Soon</span></h2>
+          <p>Live sensor readings will appear here after the hardware and backend are ready.</p>
+        </section>
+
+        <section class="account-section account-coming-soon" id="control" aria-labelledby="control-title">
+          <p class="section-eyebrow">DEVICE ACTIONS</p>
+          <h2 class="section-title" id="control-title">Device Control <span class="feature-status">Coming Soon</span></h2>
+          <p>Remote device commands are not available yet.</p>
+        </section>
+
+        <section class="account-section" id="support" aria-labelledby="support-title">
+          <p class="section-eyebrow">HELP & SUPPORT</p>
+          <h2 class="section-title" id="support-title">Support</h2>
+          <p class="account-empty-state" data-support-empty hidden>No support requests are associated with this account yet.</p>
+          <div class="account-list" data-support-list></div>
+          <form class="auth-form" data-support-form>
+            <label class="form-field">Subject
+              <input name="subject" required>
+            </label>
+            <label class="form-field">How can we help?
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <p class="auth-form-error" data-support-error role="alert" hidden></p>
+            <p class="auth-message" data-support-success role="status" aria-live="polite" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">Send support request</button>
+          </form>
+          <p class="account-direct-support">For general inquiries, email <a href="mailto:suqia.ai.official@gmail.com">suqia.ai.official@gmail.com</a>.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer auth-footer">
+      <div class="footer-bottom">
+        <p>© 2026 SUQIA. All rights reserved.</p>
+        <nav class="footer-language" aria-label="Language">
+          <a href="account.html" lang="en" hreflang="en" aria-current="page">English</a>
+          <span aria-hidden="true">|</span>
+          <a href="account-ar.html" lang="ar" hreflang="ar">العربية</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="auth-config.js" defer></script>
+    <script src="auth-client.js" defer></script>
+    <script src="auth-ui.js" defer></script>
+  </body>
+</html>

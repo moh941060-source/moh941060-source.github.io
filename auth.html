@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access your future SUQIA account. Account services will be available when the secure backend is connected.">
+    <title>SUQIA Account</title>
+    <link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header product-header">
+      <a class="site-name" href="index.html" aria-label="SUQIA home">SUQIA</a>
+      <nav class="product-header-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="about.html">About</a>
+      </nav>
+      <a class="product-language-link" href="auth-ar.html?mode=login" lang="ar" hreflang="ar">العربية</a>
+    </header>
+
+    <main class="auth-main" data-auth-page>
+      <section class="auth-panel" aria-labelledby="auth-title">
+        <p class="section-eyebrow">SUQIA ACCOUNT</p>
+        <h1 class="product-title" id="auth-title">Your SUQIA account</h1>
+        <p class="product-lead">Sign in or create an account to access your SUQIA services.</p>
+        <p class="auth-backend-notice" data-auth-backend-notice role="status" hidden>
+          The secure account service is not connected yet. No account can be created or signed in to, and credentials are not sent or stored by this page.
+        </p>
+        <p class="auth-backend-notice" data-auth-email-notice role="status" hidden>
+          Email delivery is not configured on this local server. Account registration and password recovery are unavailable.
+        </p>
+        <p class="auth-message" data-auth-message role="status" aria-live="polite" hidden></p>
+
+        <section class="auth-view" data-auth-view="login" aria-labelledby="login-title">
+          <h2 class="section-title" id="login-title">Login</h2>
+          <form class="auth-form" data-auth-form="login">
+            <label class="form-field">Email address
+              <input name="email" type="email" autocomplete="username" required>
+            </label>
+            <label class="form-field">Password
+              <input name="password" type="password" autocomplete="current-password" required>
+            </label>
+            <label class="auth-checkbox"><input name="rememberMe" type="checkbox"><span>Remember me on this device</span></label>
+            <p class="auth-form-error" data-auth-error role="alert" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">Login</button>
+          </form>
+          <div class="auth-links">
+            <a href="auth.html?mode=forgot-password">Forgot password?</a>
+            <a href="auth.html?mode=register">Create an account</a>
+          </div>
+        </section>
+
+        <section class="auth-view" data-auth-view="register" aria-labelledby="register-title" hidden>
+          <h2 class="section-title" id="register-title">Create Account</h2>
+          <form class="auth-form" data-auth-form="register">
+            <label class="form-field">Full name
+              <input name="name" autocomplete="name" required>
+            </label>
+            <label class="form-field">Email address
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+            <label class="form-field">Password
+              <input name="password" type="password" autocomplete="new-password" minlength="12" required>
+            </label>
+            <label class="form-field">Confirm password
+              <input name="passwordConfirm" type="password" autocomplete="new-password" minlength="12" required>
+            </label>
+            <p class="auth-form-error" data-auth-error role="alert" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">Create Account</button>
+          </form>
+          <div class="auth-links"><a href="auth.html?mode=login">Already have an account? Login</a></div>
+        </section>
+
+        <section class="auth-view" data-auth-view="forgot-password" aria-labelledby="forgot-title" hidden>
+          <h2 class="section-title" id="forgot-title">Forgot Password</h2>
+          <p>Enter your account email. If an account exists, the connected service will send password-reset instructions.</p>
+          <form class="auth-form" data-auth-form="forgot-password">
+            <label class="form-field">Email address
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+            <p class="auth-form-error" data-auth-error role="alert" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">Send reset instructions</button>
+          </form>
+          <div class="auth-links"><a href="auth.html?mode=login">Back to Login</a></div>
+        </section>
+
+        <section class="auth-view" data-auth-view="reset-password" aria-labelledby="reset-title" hidden>
+          <h2 class="section-title" id="reset-title">Reset Password</h2>
+          <p data-reset-token-notice hidden>This reset link is missing or invalid. Request a new password-reset email.</p>
+          <form class="auth-form" data-auth-form="reset-password">
+            <input name="token" type="hidden">
+            <label class="form-field">New password
+              <input name="password" type="password" autocomplete="new-password" minlength="12" required>
+            </label>
+            <label class="form-field">Confirm new password
+              <input name="passwordConfirm" type="password" autocomplete="new-password" minlength="12" required>
+            </label>
+            <p class="auth-form-error" data-auth-error role="alert" hidden></p>
+            <button class="action-button action-button-primary auth-submit" type="submit">Reset Password</button>
+          </form>
+          <div class="auth-links"><a href="auth.html?mode=forgot-password">Request another reset link</a></div>
+        </section>
+
+        <section class="auth-view" data-auth-view="verify-email" aria-labelledby="verify-title" hidden>
+          <h2 class="section-title" id="verify-title">Verify your email</h2>
+          <p data-verification-status role="status" aria-live="polite"></p>
+          <div class="auth-links"><a href="auth.html?mode=login">Go to Login</a></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer auth-footer">
+      <div class="footer-bottom">
+        <p>© 2026 SUQIA. All rights reserved.</p>
+        <nav class="footer-language" aria-label="Language">
+          <a href="auth.html?mode=login" lang="en" hreflang="en" aria-current="page">English</a>
+          <span aria-hidden="true">|</span>
+          <a href="auth-ar.html?mode=login" lang="ar" hreflang="ar">العربية</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="auth-config.js" defer></script>
+    <script src="auth-client.js" defer></script>
+    <script src="auth-ui.js" defer></script>
+  </body>
+</html>
